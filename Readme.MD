@@ -1,4 +1,4 @@
-# Project Name
+# wdio-headspin-boilerplate
 
 ## Setup Instructions
 
