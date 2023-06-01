@@ -2,10 +2,11 @@
 
 ## Setup Instructions
 
-1. Find your access key by going to [https://ui.headspin.io/mysettings](https://ui.headspin.io/mysettings).
-2. Put that token in line 23 of the `wdio.conf.js` file.
-3. To change the browser, you can modify the `'Headspin:selector'` to one of the browsers in your environment.
-4. to turn off performance capture, change the 'headspin:capture' value to false.
+1. Run 'npm i' to install the dependancies
+2. Find your access key by going to [https://ui.headspin.io/mysettings](https://ui.headspin.io/mysettings).
+3. Put that token in line 23 of the `wdio.conf.js` file.
+4. To change the browser, you can modify the `'Headspin:selector'` to one of the browsers in your environment.
+5. to turn off performance capture, change the 'headspin:capture' value to false.
 
 ## Usage
 
