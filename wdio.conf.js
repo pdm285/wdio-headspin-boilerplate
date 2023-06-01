@@ -20,7 +20,7 @@ export const config = {
     protocol: "https",
     hostname: 'appium-dev.headspin.io',
     port: 443,
-    path: '/v0/6d9188a57be2440c9842c7bbdde405bf/wd/hub',
+    path: '/v0/<your_key>/wd/hub',
     //
     // ==================
     // Specify Test Files
