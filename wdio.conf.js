@@ -68,7 +68,8 @@ export const config = {
     //
     capabilities: [{
         // capabilities for local browser web tests
-        "headspin:selector": "device_skus:\"Chrome\"" // or "firefox", "microsoftedge", "safari"
+        "headspin:selector": "device_skus:\"Chrome\"", // or "firefox", "microsoftedge", "safari"
+        "headspin:capture": true
     }],
     //
     // ===================
