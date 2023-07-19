@@ -1,3 +1,9 @@
+const key = process.env.key
+const sku = process.env.sku
+const capture = process.env.capture
+const region = process.env.region
+
+
 export const config = {
     //
     // ====================
@@ -20,7 +26,7 @@ export const config = {
     protocol: "https",
     hostname: 'appium-dev.headspin.io',
     port: 443,
-    path: '/v0/<your_key>/wd/hub',
+    path: `/v0/${key}/wd/hub`,
     //
     // ==================
     // Specify Test Files
@@ -68,8 +74,10 @@ export const config = {
     //
     capabilities: [{
         // capabilities for local browser web tests
-        "headspin:selector": "device_skus:\"Chrome\"", // or "firefox", "microsoftedge", "safari"
-        "headspin:capture": true
+        "headspin:selector": "device_skus:\"" + sku + "\"", // or "firefox", "microsoftedge", "safari"
+        "headspin:capture": true,
+        "headspin:testName": "wdio test",
+        "headspin:sessionTags":[{"Used for":"Webinar"}]
     }],
     //
     // ===================
@@ -244,9 +252,15 @@ export const config = {
      * @param {boolean} result.passed    true if test has passed, otherwise false
      * @param {object}  result.retries   informations to spec related retries, e.g. `{ attempts: 0, limit: 0 }`
      */
-    // afterTest: function(test, context, { error, result, duration, passed, retries }) {
-    // },
-
+    afterTest: function(test, context, { error, result, duration, passed, retries }) {
+        if(passed == true){
+            browser.execute('headspin:quitSession', {'status': 'Passed'})
+        } else {
+            browser.execute('headspin:quitSession', {'status': 'Failed'})
+        }
+    
+    },
+    
 
     /**
      * Hook that gets executed after the suite has ended
@@ -298,3 +312,4 @@ export const config = {
     // onReload: function(oldSessionId, newSessionId) {
     // }
 }
+
