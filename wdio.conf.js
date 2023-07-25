@@ -1,9 +1,9 @@
-const fetch = import('node-fetch');
+import fetch from 'node-fetch';
 
 const key = process.env.key
-const sku1 = process.env.SKU1
-const sku2 = process.env.SKU2
-const sku3 = process.env.SKU3
+const SKU1 = process.env.SKU1
+const SKU2 = process.env.SKU2
+const SKU3 = process.env.SKU3
 const capture = process.env.capture
 const region = process.env.region
 
@@ -78,23 +78,23 @@ export const config = {
     //
     capabilities: [{
         // capabilities for local browser web tests
-        "headspin:selector": "device_skus:\"" + sku1 + "\"", // or "firefox", "microsoftedge", "safari"
-        "headspin:capture": true,
-        "headspin:testName": "wdio test",
+        "headspin:selector": "device_skus:\"" + SKU1 + "\"",
+        "headspin:capture": capture,
+        "headspin:testName": SKU1 + " test",
         "headspin:sessionTags":[{"Used for":"Webinar"}]
     },
     {
         // capabilities for local browser web tests
-        "headspin:selector": "device_skus:\"" + sku2 + "\"", // or "firefox", "microsoftedge", "safari"
-        "headspin:capture": true,
-        "headspin:testName": "wdio test",
+        "headspin:selector": "device_skus:\"" + SKU2 + "\"", 
+        "headspin:capture": capture,
+        "headspin:testName": SKU2 + " test",
         "headspin:sessionTags":[{"Used for":"Webinar"}]
     },
     {
         // capabilities for local browser web tests
-        "headspin:selector": "device_skus:\"" + sku3 + "\"", // or "firefox", "microsoftedge", "safari"
-        "headspin:capture": true,
-        "headspin:testName": "wdio test",
+        "headspin:selector": "device_skus:\"" + SKU3 + "\"", 
+        "headspin:capture": capture,
+        "headspin:testName": SKU3 + " test",
         "headspin:sessionTags":[{"Used for":"Webinar"}]
     }],
     //
@@ -333,4 +333,10 @@ export const config = {
     // onReload: function(oldSessionId, newSessionId) {
     // }
 }
+
+
+
+
+
+
 
