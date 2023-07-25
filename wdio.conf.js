@@ -1,9 +1,13 @@
+const fetch = import('node-fetch');
+
 const key = process.env.key
-const sku = process.env.sku
+const sku1 = process.env.sku1
+const sku2 = process.env.sku2
+const sku3 = process.env.sku3
 const capture = process.env.capture
 const region = process.env.region
 
-
+const apiUrl = "https://api-dev.headspin.io/v0/perftests/upload";
 export const config = {
     //
     // ====================
@@ -74,7 +78,21 @@ export const config = {
     //
     capabilities: [{
         // capabilities for local browser web tests
-        "headspin:selector": "device_skus:\"" + sku + "\"", // or "firefox", "microsoftedge", "safari"
+        "headspin:selector": "device_skus:\"" + sku1 + "\"", // or "firefox", "microsoftedge", "safari"
+        "headspin:capture": true,
+        "headspin:testName": "wdio test",
+        "headspin:sessionTags":[{"Used for":"Webinar"}]
+    },
+    {
+        // capabilities for local browser web tests
+        "headspin:selector": "device_skus:\"" + sku2 + "\"", // or "firefox", "microsoftedge", "safari"
+        "headspin:capture": true,
+        "headspin:testName": "wdio test",
+        "headspin:sessionTags":[{"Used for":"Webinar"}]
+    },
+    {
+        // capabilities for local browser web tests
+        "headspin:selector": "device_skus:\"" + sku3 + "\"", // or "firefox", "microsoftedge", "safari"
         "headspin:capture": true,
         "headspin:testName": "wdio test",
         "headspin:sessionTags":[{"Used for":"Webinar"}]
@@ -253,12 +271,15 @@ export const config = {
      * @param {object}  result.retries   informations to spec related retries, e.g. `{ attempts: 0, limit: 0 }`
      */
     afterTest: function(test, context, { error, result, duration, passed, retries }) {
+        
         if(passed == true){
-            browser.execute('headspin:quitSession', {'status': 'Passed'})
+
+
         } else {
-            browser.execute('headspin:quitSession', {'status': 'Failed'})
+ 
         }
-    
+    // check impact score instead
+
     },
     
 
