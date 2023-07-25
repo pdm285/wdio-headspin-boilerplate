@@ -79,21 +79,21 @@ export const config = {
     capabilities: [{
         // capabilities for local browser web tests
         "headspin:selector": "device_skus:\"" + SKU1 + "\"",
-        "headspin:capture": capture,
+        "headspin:capture": true,
         "headspin:testName": SKU1 + " test",
         "headspin:sessionTags":[{"Used for":"Webinar"}]
     },
     {
         // capabilities for local browser web tests
         "headspin:selector": "device_skus:\"" + SKU2 + "\"", 
-        "headspin:capture": capture,
+        "headspin:capture": true,
         "headspin:testName": SKU2 + " test",
         "headspin:sessionTags":[{"Used for":"Webinar"}]
     },
     {
         // capabilities for local browser web tests
         "headspin:selector": "device_skus:\"" + SKU3 + "\"", 
-        "headspin:capture": capture,
+        "headspin:capture": true,
         "headspin:testName": SKU3 + " test",
         "headspin:sessionTags":[{"Used for":"Webinar"}]
     }],
