@@ -1,9 +1,9 @@
 const fetch = import('node-fetch');
 
 const key = process.env.key
-const sku1 = process.env.sku1
-const sku2 = process.env.sku2
-const sku3 = process.env.sku3
+const sku1 = process.env.SKU1
+const sku2 = process.env.SKU2
+const sku3 = process.env.SKU3
 const capture = process.env.capture
 const region = process.env.region
 
